@@ -1,0 +1,33 @@
+@media screen and (max-width: 1600px) {
+    .main_box .home .midbox .line {
+        border: none;
+    }
+    .main_box .home .hello {
+        left: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        z-index: -1;
+    }
+    .main_box .home .portrait {
+        left: 55%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .main_box .home .portrait {
+        left: 50%;
+    }
+}
+
+@media screen and (max-width: 790px) {
+    .main_box .home .portrait {
+        left: 40%;
+    }
+    .main_box .home .midbox {
+        border: none;
+        background-color: rgba(1, 1, 1, 0);;
+    }
+    .main_box .home .hello {
+        left: 30%;
+    }
+}

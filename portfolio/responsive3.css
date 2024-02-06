@@ -1,0 +1,18 @@
+@media (max-width: 1340px) {
+    .info {
+      grid-auto-flow: row; /* Change layout to stack items vertically */
+    }
+    .info .first {
+        left: 5%;
+    }
+    .info .second {
+        left: 5%;
+    }
+    .info .first img {
+        padding-left: 120px;
+    }
+
+    .info .second img {
+        padding-left: 120px;
+    }
+  }

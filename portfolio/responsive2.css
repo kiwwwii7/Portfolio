@@ -1,0 +1,5 @@
+@media screen and (max-width: 1079px) {
+    .main_box .sidebar_menu {
+        z-index: 100;
+    }
+}

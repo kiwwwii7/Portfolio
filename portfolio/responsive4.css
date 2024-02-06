@@ -1,0 +1,10 @@
+@media (max-width: 970px) {
+    .input-row {
+      flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    }
+    
+    .input-row .input-group {
+      flex-basis: 100%; /* Each input-group takes up full width */
+      margin-bottom: 10px; /* Adjust spacing between input groups */
+    }
+  }

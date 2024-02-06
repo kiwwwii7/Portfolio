@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-MC4mUEZzfQhBA1i5Ffjz1Z5TsMhpEMXYj3XeKjoOWVb1EFU8eBvX0e9FbW2t/SS" crossorigin="anonymous">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6fb0e317aa.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://afeld.github.io/emoji-css/emoji.css">
+    <title>Feedback</title>
+    <script>
+        let selectedEmoji = ''; // Variable to store the selected emoji
+
+        function selectEmoji(emoji) {
+            selectedEmoji = emoji;
+            updateEmojiStyles(); // Call a function to update styles (added)
+            console.log('Selected Emoji:', selectedEmoji); // You can replace this with your desired logic
+        }
+
+        function updateEmojiStyles() {
+            const emojis = document.querySelectorAll('.emoji_selection label');
+            emojis.forEach(emoji => {
+                emoji.classList.remove('selected');
+            });
+
+            const selectedEmojiElement = document.querySelector(`[onclick="selectEmoji('${selectedEmoji}')"]`);
+            if (selectedEmojiElement) {
+                selectedEmojiElement.classList.add('selected');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="main_box">
+        <input type="checkbox" id="check">
+        <div class="btn_one">
+            <label for="check">
+                <i class="fas fa-bars"></i>
+            </label>
+        </div>
+        <div class="sidebar_menu">
+            <div class="logo">
+                <a href="#"><img src="assets/logo.png" alt="Logo" width="160px"></a>
+            </div>
+            <div class="btn_two">
+                <label for="check">
+                    <i class="fas fa-times"></i>
+                </label>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i>
+                            Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-question-circle"></i>
+                            About Me</a></li>
+                    <li><a href="education.html"><i class="fas fa-sliders-h"></i>
+                            Education</a></li>
+                    <li><a href="contact.html"><i class="fas fa-phone-volume"></i>
+                            Contact</a></li>
+                    <li><a href="feedback.html"><i class="fas fa-comments"></i>
+                            Feedback</a></li>
+                </ul>
+            </div>
+            <div class="social_media">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <video autoplay muted loop id="backgroundVideo">
+            <source src="assets/background6.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="feedback_section">
+        <h2>Feedback</h2>
+        <form action="#" method="post">
+            <!-- Emoji Selection -->
+            <div class="emoji_selection">
+                <label for="angry" onclick="selectEmoji('😠')">😠</label>
+                <input type="radio" id="angry" name="feedback" value="1">
+
+                <label for="sad" onclick="selectEmoji('😞')">😞</label>
+                <input type="radio" id="sad" name="feedback" value="2">
+
+                <label for="emotionless" onclick="selectEmoji('😐')">😐</label>
+                <input type="radio" id="em em-expressionless" name="feedback" value="3">
+
+                <label for="smiley" onclick="selectEmoji('😊')">😊</label>
+                <input type="radio" id="em em-grinning" name="feedback" value="4">
+
+                <label for="star_eyes" onclick="selectEmoji('😍')">😍</label>
+                <input type="radio" id="em em-star-struck" name="feedback" value="5">
+            </div>
+            
+            <!-- Name Input -->
+            <div class="name_input">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+            </div>
+
+            <!-- Comment Section -->
+            <div class="comment_section">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" placeholder="Your Comment"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
